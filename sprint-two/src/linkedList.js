@@ -10,7 +10,7 @@ var LinkedList = function() {
       //create new node with value as the value
       //set head, tail to new node
       this.head = link;
-      this.tail = this.head;
+      this.tail = link;
     }
     else {
       this.tail.next = link;
