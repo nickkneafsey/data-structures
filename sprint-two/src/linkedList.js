@@ -43,19 +43,23 @@ var LinkedList = function() {
       if (this.head) this.head.previous = null;
       this.size--;
     }
-    else throw new Error('empty');
+    else throw new Error('empty list');
     return header.value;
   };
 
   list.removeTail = function() {
     var tailer = this.tail;
-    if (this.size > 0) {
-      this.tail = this.tail.previous;
-      if (this.tail) this.tail.next = null;
-      this.size--;
+    try {
+      if (this.size > 0) {
+        this.tail = this.tail.previous;
+        if (this.tail) this.tail.next = null;
+        this.size--;
+        return tailer.value;
+      }
+      else throw new Error();
+    } catch(e) {
+      return 'undefined';
     }
-    else throw new Error('empty');
-    return tailer.value;
   };
 
   list.contains = function(target) {
