@@ -65,7 +65,7 @@ describe('linkedList', function() {
   });
 
   it('should remove from tail', function(){
-    //expect(linkedList.removeTail().to.equal("empty list"));
+    expect(linkedList.removeTail().to.equal("empty list"));
     linkedList.addToTail(71);
     linkedList.addToTail(33);
     linkedList.removeTail();
